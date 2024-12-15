@@ -10,7 +10,9 @@ function showSection(sectionId) {
         if (section) {
             if (id === sectionId) {
                 section.style.display = 'block';
-                section.classList.add('seccion-activa'); // Añadir animación
+                setTimeout(() => {
+                    section.classList.add('seccion-activa'); // Añadir animación con retardo
+                }, 50); // Pequeño retraso para que el navegador detecte el cambio
             } else {
                 section.style.display = 'none';
                 section.classList.remove('seccion-activa'); // Quitar animación
@@ -18,11 +20,12 @@ function showSection(sectionId) {
         }
     });
 
-    // Si seleccionas habilidades, ejecuta la animación de los círculos
+    // Si seleccionas "Sobre Mí", ejecuta la animación de los círculos
     if (sectionId === 'sobreMi') {
         animateCircles();
     }
 };
+
 
 // Ejecutar animación de los círculos
 function animateCircles() {
