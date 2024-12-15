@@ -242,6 +242,22 @@ section {
         gap: 2rem; /* Reduce el espacio entre los círculos */
     }
 
+    .circle {
+        width: 80px; /* Reduce el tamaño del círculo */
+        height: 80px;
+    }
+
+    .circle::before {
+        width: 60px; /* Reduce el tamaño del fondo interno */
+        height: 60px;
+    }
+
+    .circle img {
+        width: 30px; /* Reduce el tamaño de la imagen */
+        height: 30px;
+    }
+
+
     .contenedor-proyecto {
         flex-direction: column; /* Cambia la disposición a columna */
     }
