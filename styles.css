@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: Sugoe UI, sans-serif;
+    margin: 2;
     padding: 0;
     background-color: #f4f1e0;
     color: #333;
@@ -9,67 +9,167 @@ body {
 header {
     text-align: center;
     padding: 2rem;
+    margin-bottom: -2rem;
 }
 
 section {
-    padding: 2rem;
+    padding: 1rem;
     max-width: 900px;
+    max-height: 250px;
     margin: auto;
+    text-align: justify;
+    line-height: 1.5;
 }
 
 .sobre-mi {
     display: flex;
     align-items: center;
+    margin-top: 0rem;
     margin-bottom: 3rem;
 }
 
 .sobre-mi img {
-    width: 150px;
+    width: 350px;
     height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
+    border-radius: 80%;
+    margin-right: 80px;
 }
 
 h2 {
     font-weight: bold;
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .habilidades {
-    text-align: center;
+    display: flex;
+    justify-content: flex-start; /* Alinea las habilidades a la izquierda */
+    gap: 3rem; /* Espaciado entre círculos */
+    flex-wrap: wrap; /* Permite que se acomoden en filas si no hay suficiente espacio horizontal */
+    padding-left: 50px; /* Espaciado desde el borde izquierdo */
+    margin-top: 2rem;
 }
 
 .habilidades .skill {
-    display: inline-block;
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el texto y las imágenes dentro del skill */
+    margin: 2rem;
     text-align: center;
 }
 
-.habilidades .skill img {
-    width: 80px;
-    height: 80px;
+.circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4caf50 0%,
+        #ddd 0%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.habilidades .circle {
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 90px; /* Tamaño interior del círculo */
+    height: 90px;
+    border-radius: 60%;
+    background: #f4f1e0; /* Color de fondo del interior */
+}
+
+.circle img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.percentage {
     margin-top: 10px;
     font-weight: bold;
+    font-size: 1rem;
 }
 
-.proyectos {
-    margin-bottom: 3rem;
-}
-
-.proyectos .proyecto {
-    margin-bottom: 2rem;
-}
-
-.proyectos .proyecto h3 {
+/* Estilo para la sección proyectos */
+.proyecto h3 {
+    text-align: left; /* Alinea el título a la izquierda */
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.proyectos img {
+/* Contenedor con dos columnas */
+.contenedor-proyecto {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Espacio entre columnas */
+}
+
+/* Columna izquierda: descripción */
+.descripcion-proyecto {
+    flex: 1; /* Toma el espacio de la izquierda */
+    text-align: justify;
+}
+
+/* Columna derecha: imágenes */
+.imagenes-proyecto {
+    flex: 1; /* Toma el espacio de la derecha */
+    display: flex;
+    flex-direction: column; /* Las imágenes se apilan verticalmente */
+    gap: 1rem; /* Espacio entre imágenes */
+}
+
+.imagenes-proyecto img {
+    width: 100%; /* Ajusta el tamaño de las imágenes */
+    max-height: 150px;
+    object-fit: cover; /* Mantiene la proporción de las imágenes */
+}
+
+/* Flechas de navegación */
+.navegacion {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 4rem; 
+    margin: 1rem 0; 
+}
+.flecha {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.flecha:hover {
+    background-color: #c0bfbf;
+    transform: scale(1.1);
+}
+
+/* Contenedor de proyectos */
+.contenedor-proyectos {
+    position: relative;
+    height: auto;
+}
+
+.proyecto {
+    position: absolute;
+    top: 0;
     width: 100%;
-    margin-bottom: 1rem;
+    opacity: 0;
+    transition: all 0.4s ease-in-out; /* Transición suave */
+}
+
+.proyecto.activo {
+    display: block; /* Muestra solo el proyecto activo */
+    opacity: 1;
 }
 
 .contacto {
@@ -79,12 +179,13 @@ h2 {
 
 .botones {
     text-align: center;
-    margin: 2rem 0;
+    margin-bottom:2rem ;
+    margin: 0rem 0;
 }
 
 .botones button {
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 10px 4dvh;
+    margin: 50px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -95,5 +196,60 @@ h2 {
 
 .botones button:hover {
     transform: scale(1.1);
-    background-color: #555;
+    background-color: #afadad;
+}
+
+/* Estilo para los anillos de habilidad */
+.circle {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    border-radius: 80%;
+    background: conic-gradient(
+        #4caf50 0%,
+        #ddd 0%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 95px; /* Tamaño interior, ajusta según el grosor */
+    height: 95px;
+    border-radius: 50%;
+    background: #f4f1e0; /* Color del fondo interno */
+}
+
+.circle img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.percentage {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Animación de subida */
+@keyframes slide-up {
+    from {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(50px); /* Desplazamiento inicial hacia abajo */
+    }
+    to {
+        opacity: 1; /* Termina visible */
+        transform: translateY(0); /* Posición final */
+    }
+}
+
+/* Clase que aplica la animación */
+.seccion-activa {
+    animation: slide-up 0.8s ease-out; /* Usa la animación durante 0.8s */
 }

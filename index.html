@@ -13,54 +13,122 @@
     </header>
 
     <div class="botones">
-        <button onclick="showSection('sobreMi')">SOBRE MI</button>
-        <button onclick="showSection('habilidades')">HABILIDADES</button>
+        <button onclick="showSection('sobreMi')">SOBRE MÍ</button>
         <button onclick="showSection('proyectos')">PROYECTOS</button>
         <button onclick="showSection('contacto')">CONTACTO</button>
     </div>
 
     <section id="sobreMi">
         <div class="sobre-mi">
-            <img src="foto-perfil.jpg" alt="Foto personal">
+            <img src="foto-perfil.png" alt="Foto personal">
             <div>
-                <h2>SOBRE MI</h2>
+                <h2>SOBRE MÍ</h2>
                 <p>Ingeniero Civil apasionado por la tecnología y la mejora de procesos. Experiencia en la gestión de proyectos con BIM y uso de técnicas de Análitica y Visualización de Datos en las áreas de ingeniería y oficina técnica.</p>
             </div>
         </div>
-    </section>
 
-    <section id="habilidades" style="display: none;">
         <h2>HABILIDADES</h2>
         <div class="habilidades">
             <div class="skill">
-                <img src="python-logo.png" alt="Python">
-                <div class="circle">60%</div>
+                <div class="circle" data-percent="60">
+                    <img src="python-logo.png" alt="Python">
+                </div>
+                <div class="percentage">60%</div>
             </div>
             <div class="skill">
-                <img src="powerbi-logo.png" alt="Power BI">
-                <div class="circle">80%</div>
+                <div class="circle" data-percent="80">
+                    <img src="excel-logo.png" alt="Excel">
+                </div>
+                <div class="percentage">80%</div>
             </div>
             <div class="skill">
-                <img src="revit-logo.png" alt="Revit">
-                <div class="circle">90%</div>
+                <div class="circle" data-percent="80">
+                    <img src="powerbi-logo.png" alt="PowerBI">
+                </div>
+                <div class="percentage">80%</div>
+            </div>
+                        <div class="skill">
+                <div class="circle" data-percent="90">
+                    <img src="revit-logo.png" alt="Revit">
+                </div>
+                <div class="percentage">90%</div>              
             </div>
         </div>
     </section>
 
     <section id="proyectos" style="display: none;">
         <h2>PROYECTOS</h2>
-        <div class="proyecto">
-            <h3>Optimización del Desperdicio de Acero en Modelos BIM</h3>
-            <h4>Objetivos</h4>
-            <p>Determinar el desperdicio por elemento.</p>
-            <h4>Abordamiento del Problema</h4>
-            <p>Ordenar elementos por partidas.</p>
-            <h4>Resultados</h4>
-            <p>Desperdicios por elemento y agrupamiento.</p>
-            <img src="proyecto-acero1.png" alt="Imagen del proyecto">
-            <img src="proyecto-limpieza1.png" alt="Otra imagen del proyecto">
+        <!-- Flechas de navegación -->
+        <div class="navegacion">
+            <button onclick="cambiarProyecto('prev')" class="flecha"><</button>
+            <button onclick="cambiarProyecto('next')" class="flecha">></button>
+        </div>
+    
+        <!-- Contenedor de proyectos -->
+        <div class="contenedor-proyectos">
+            <!-- Proyecto 1 -->
+            <div class="proyecto activo">
+                <h3>📊 Optimización del Cálculo de Desperdicio de Acero en Modelos BIM</h3>
+                <div class="contenedor-proyecto">
+                    <div class="descripcion-proyecto">
+                        <h4>Descripción del Problema</h4>
+                        <p>En la construcción, las varillas de acero corrugado son elementos longitudinales de sección circular y diámetros diversaos. Son utilizadas como elementos de refuerzo de elementos de concreto armado. Estas siguen criterios normativos que garantizan el correcto compartamiento estructural del elmento, lo cual deriva en varillas de longitudes y formas específicas (Ver Figura 1)</p>
+                        <p>En el sector construcción las varillas son vendidas por peso, comunmente expresado en toneladas y en longitudes de 9 metros. Esta última condición comercial genera el desperdicio de acero, pues si los criterios de diseño obligan a tener varillas de 6 metros, el desperdicio será el restante de 3 metros, pues esta longitud no podrá ser utilizada en otra varilla al ser menor que 6 metros.</p>
+                        <p>Lo mencionado se puede expresar bajo la siguiente expresión:</p>
+                        
+                        <script type="text/javascript" async
+                        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+                        </script>
+                        \[
+                        \text{Desperdicio} = \left( \frac{\text{Metrado de Pedido (Varillas Comerciales en Kg)}}{\text{Metrado Teórico (Según Diseño en Kg)}} - 1 \right) \times 100
+                        \]
+                        <p>Adicionalmente, una práctica estandarizada es contar una línea base para el Metrado Teórico, es decir unas condiciones de diseño iniciales, las cuales derivarán en un Metrado de Pedido en función de las longitudes dispuestas en plano. </p>
+                        <p>La línea base será llamada como el Metrado de Presupuesto y el Metrado de Pedido será el cálculo de longitudes de forma tal que se maximen las piezas obtenidas de una sola varilla comercial. Dentro de este último punto el único criterio de diseño que podrá iterarse será la Longitud de Traslape.</p>
+                        <p>El objetivo de este proyecto no es sustentar los criterios normativos para los Traslapes, por tantos estos no serán discutidos; sin embargo, estos son de acuerdo a la norma E060 del Reglamento Nacional de Edificaciones de Perú.</p>
+                        <h4>Objetivos</h4>
+                        <p>Se analizarán los siguientes elementos estructurales:</p>
+                        <ul>
+                            <li>Placas (Muros de Concreto Armado)</li>
+                            <li>Columnas</li>
+                            <li>Vigas</li>
+                        </ul>
+                        <p>Se creará una función que permita realizar el agrupamiento de piezas.</p>
+                        <p>Se determinará el porcentaje de desperdicio por cada tipo (forma) del elemento y también de manera integral teniendo en consideración que las piezas de un elemento pueden ser utilizadas en otro.</p>
+                        <h4>Abordamiento del Problema</h4>
+                        <p>Ordenar elementos por partidas.</p>
+                        <h4>Resultados</h4>
+                        <p>Desperdicios por elemento y agrupamiento.</p>
+                    </div>
+                    <div class="imagenes-proyecto">
+                        <img src="proyecto-acero1.png" alt="Imagen del proyecto">
+                        <img src="proyecto-limpieza1.png" alt="Otra imagen del proyecto">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Proyecto 2 -->
+            <div class="proyecto">
+                <h3>📅 Limpieza de Cronograma para Simulación</h3>
+                <div class="contenedor-proyecto">
+                    <div class="descripcion-proyecto">
+                        <h4>Descripción del Problema</h4>
+                        <p>Errores en los datos del cronograma inicial.</p>
+                        <h4>Objetivos</h4>
+                        <p>Optimizar el cronograma de simulación para reducir inconsistencias...</p>
+                        <h4>Abordamiento del Problema</h4>
+                        <p>Reorganización de las actividades y ajuste de tiempos.</p>
+                        <h4>Resultados</h4>
+                        <p>Cronogramas listos para simulación eficiente.</p>
+                    </div>
+                    <div class="imagenes-proyecto">
+                        <img src="proyecto2a.jpg" alt="Imagen del proyecto">
+                        <img src="proyecto2b.jpg" alt="Otra imagen del proyecto">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    
 
     <section id="contacto" style="display: none;">
         <h2>CONTACTO</h2>
@@ -71,3 +139,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
