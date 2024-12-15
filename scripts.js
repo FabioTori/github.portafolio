@@ -20,12 +20,14 @@ function showSection(sectionId) {
 }
 
 
+// Ejecutar animación de los círculos
 function animateCircles() {
     const circles = document.querySelectorAll('.circle');
     circles.forEach(circle => {
         const percent = circle.getAttribute('data-percent');
         let currentPercent = 0;
 
+        // Animar el progreso del círculo
         const interval = setInterval(() => {
             currentPercent++;
             if (currentPercent > percent) {
@@ -36,10 +38,17 @@ function animateCircles() {
                     #ddd ${currentPercent * 3.6}deg
                 )`;
             }
-        }, 15);
+        }, 15); // Velocidad de la animación
     });
 }
 
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    // Mostrar la sección "Sobre Mí" por defecto
+    showSection('sobreMi');
+    // Ejecutar la animación de los círculos
+    animateCircles();
+});
 let proyectoActual = 0;
 
 function cambiarProyecto(direccion) {
