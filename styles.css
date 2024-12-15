@@ -1,3 +1,4 @@
+/* --- ESTILOS BASE --- */
 body {
     font-family: Sugoe UI, sans-serif;
     margin: 2;
@@ -15,12 +16,12 @@ header {
 section {
     padding: 1rem;
     max-width: 900px;
-    max-height: 250px;
     margin: auto;
     text-align: justify;
     line-height: 1.5;
 }
 
+/* --- ESTILOS ESPECÍFICOS --- */
 .sobre-mi {
     display: flex;
     align-items: center;
@@ -35,51 +36,48 @@ section {
     margin-right: 80px;
 }
 
-h2 {
-    font-weight: bold;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
 .habilidades {
     display: flex;
-    justify-content: flex-start; /* Alinea las habilidades a la izquierda */
-    gap: 3rem; /* Espaciado entre círculos */
-    flex-wrap: wrap; /* Permite que se acomoden en filas si no hay suficiente espacio horizontal */
-    padding-left: 50px; /* Espaciado desde el borde izquierdo */
+    justify-content: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-left: 50px;
     margin-top: 2rem;
 }
 
 .habilidades .skill {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el texto y las imágenes dentro del skill */
+    align-items: center;
     margin: 2rem;
     text-align: center;
 }
 
+/* --- CÍRCULOS DE HABILIDAD --- */
 .circle {
     position: relative;
-    width: 100px;
+    width: 100px; /* Tamaño del círculo base */
     height: 100px;
     border-radius: 50%;
     background: conic-gradient(
-        #4caf50 0%,
-        #ddd 0%
+        #4caf50 0%, /* Color del progreso */
+        #ddd 0% /* Color de fondo */
     );
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background 1s ease-in-out; /* Transición suave */
 }
 
 .circle::before {
     content: '';
     position: absolute;
-    width: 90px; /* Tamaño interior del círculo */
-    height: 90px;
-    border-radius: 60%;
-    background: #f4f1e0; /* Color de fondo del interior */
+    width: 80px; /* Tamaño interior */
+    height: 80px;
+    border-radius: 50%;
+    background: #f4f1e0; /* Fondo interior del círculo */
 }
+
 
 .circle img {
     position: absolute;
@@ -87,47 +85,7 @@ h2 {
     height: 50px;
 }
 
-.percentage {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-/* Estilo para la sección proyectos */
-.proyecto h3 {
-    text-align: left; /* Alinea el título a la izquierda */
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Contenedor con dos columnas */
-.contenedor-proyecto {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem; /* Espacio entre columnas */
-}
-
-/* Columna izquierda: descripción */
-.descripcion-proyecto {
-    flex: 1; /* Toma el espacio de la izquierda */
-    text-align: justify;
-}
-
-/* Columna derecha: imágenes */
-.imagenes-proyecto {
-    flex: 1; /* Toma el espacio de la derecha */
-    display: flex;
-    flex-direction: column; /* Las imágenes se apilan verticalmente */
-    gap: 1rem; /* Espacio entre imágenes */
-}
-
-.imagenes-proyecto img {
-    width: 100%; /* Ajusta el tamaño de las imágenes */
-    max-height: 150px;
-    object-fit: cover; /* Mantiene la proporción de las imágenes */
-}
-
-/* Flechas de navegación */
+/* --- SECCIÓN PROYECTOS --- */
 .navegacion {
     display: flex; 
     justify-content: center; 
@@ -172,15 +130,64 @@ h2 {
     opacity: 1;
 }
 
-.contacto {
-    text-align: center;
-    margin-top: 3rem;
+.descripcion-proyecto {
+    flex: 1;
+    text-align: justify;
 }
 
+.imagenes-proyecto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.imagenes-proyecto img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+/* --- ECUACIONES --- */
+.equation-container {
+    text-align: center; /* Centra la fórmula */
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    padding: 1rem; /* Espaciado interno */
+    margin: 1rem auto; /* Centrado con márgenes */
+    max-width: 100%; /* Evita que el contenedor crezca más que su padre */
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+/* Ajusta el tamaño de la fórmula */
+.equation-container .MathJax {
+    font-size: 1.2rem; /* Tamaño del texto */
+}
+
+/* Opciones responsivas para pantallas pequeñas */
+@media (max-width: 768px) {
+    .equation-container .MathJax {
+        font-size: 1rem; /* Reduce el tamaño en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .equation-container .MathJax {
+        font-size: 0.9rem; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+}
+
+
+.equation-container p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* --- BOTONES --- */
 .botones {
     text-align: center;
-    margin-bottom:2rem ;
-    margin: 0rem 0;
+    margin-bottom: 2rem;
 }
 
 .botones button {
@@ -199,59 +206,82 @@ h2 {
     background-color: #afadad;
 }
 
-/* Estilo para los anillos de habilidad */
-.circle {
-    position: relative;
-    width: 110px;
-    height: 110px;
-    border-radius: 80%;
-    background: conic-gradient(
-        #4caf50 0%,
-        #ddd 0%
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle::before {
-    content: '';
-    position: absolute;
-    width: 95px; /* Tamaño interior, ajusta según el grosor */
-    height: 95px;
-    border-radius: 50%;
-    background: #f4f1e0; /* Color del fondo interno */
-}
-
-.circle img {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.percentage {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-
-/* Animación de subida */
-/* Clase que aplica la animación */
+/* --- ANIMACIONES --- */
 .seccion-activa {
-    animation: slide-up 0.8s ease-out; /* Usa la animación durante 0.8s */
+    animation: slide-up 0.8s ease-out;
 }
 
 @keyframes slide-up {
     from {
-        opacity: 0; /* Comienza invisible */
-        transform: translateY(50px); /* Desplazamiento inicial hacia abajo */
+        opacity: 0;
+        transform: translateY(50px);
     }
     to {
-        opacity: 1; /* Termina visible */
-        transform: translateY(0); /* Posición final */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+/* --- ESTILOS RESPONSIVOS --- */
+@media (max-width: 768px) {
+    .sobre-mi {
+        flex-direction: column; /* Cambia la disposición a columna */
+        align-items: center; /* Centra el contenido */
+        text-align: center; /* Centra el texto */
+    }
+
+    .sobre-mi img {
+        width: 200px;
+        height: 200px;
+        margin: 0 0 1rem 0; /* Centra la imagen y añade espacio inferior */
+    }
+
+    .habilidades {
+        padding-left: 0; /* Elimina el margen izquierdo */
+        justify-content: center; /* Centra los círculos */
+        gap: 2rem; /* Reduce el espacio entre los círculos */
+    }
+
+    .contenedor-proyecto {
+        flex-direction: column; /* Cambia la disposición a columna */
+    }
+
+    .descripcion-proyecto,
+    .imagenes-proyecto {
+        flex: none; /* Elimina el comportamiento flexible */
+        width: 100%; /* Asegura que ocupen todo el ancho */
+    }
+
+    .imagenes-proyecto img {
+        max-height: 200px; /* Ajusta el tamaño de las imágenes */
+    }
+
+    .botones button {
+        width: 90%; /* Los botones ocupan casi todo el ancho */
+        margin: 10px auto; /* Centra los botones */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem; /* Reduce el tamaño de los encabezados */
+    }
+
+    .habilidades .circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .circle img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .botones button {
+        font-size: 1rem;
+    }
+}
