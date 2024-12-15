@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Mostrar la sección "Sobre Mí" por defecto
+    showSection('sobreMi');
+});
+
 function showSection(sectionId) {
     const sections = ['sobreMi', 'proyectos', 'contacto'];
     sections.forEach(id => {
@@ -18,7 +23,6 @@ function showSection(sectionId) {
         animateCircles();
     }
 }
-
 
 // Ejecutar animación de los círculos
 function animateCircles() {
@@ -41,11 +45,6 @@ function animateCircles() {
         }, 15); // Velocidad de la animación
     });
 }
-// Ejecutar al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    // Ejecutar la animación de los círculos
-    animateCircles();
-});
 
 
 let proyectoActual = 0;
