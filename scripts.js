@@ -41,14 +41,13 @@ function animateCircles() {
         }, 15); // Velocidad de la animación
     });
 }
-
 // Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    // Mostrar la sección "Sobre Mí" por defecto
-    showSection('sobreMi');
     // Ejecutar la animación de los círculos
     animateCircles();
 });
+
+
 let proyectoActual = 0;
 
 function cambiarProyecto(direccion) {
