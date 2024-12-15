@@ -237,7 +237,12 @@ h2 {
     font-size: 1rem;
 }
 
+
 /* Animación de subida */
+.seccion-activa {
+    animation: slide-up 4s ease-out; /* Define la animación */
+}
+
 @keyframes slide-up {
     from {
         opacity: 0; /* Comienza invisible */
