@@ -56,8 +56,8 @@ section {
 /* --- CÍRCULOS DE HABILIDAD --- */
 .circle {
     position: relative;
-    width: 100px; /* Tamaño del círculo base */
-    height: 100px;
+    width: 90px; /* Tamaño del círculo base */
+    height: 90px;
     border-radius: 50%;
     background: conic-gradient(
         #4caf50 0%, /* Color del progreso */
@@ -72,8 +72,8 @@ section {
 .circle::before {
     content: '';
     position: absolute;
-    width: 85px; /* Tamaño interior */
-    height: 85px;
+    width: 70px; /* Tamaño interior */
+    height: 70px;
     border-radius: 50%;
     background: #f4f1e0; /* Fondo interior del círculo */
 }
