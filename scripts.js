@@ -5,30 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function showSection(sectionId) {
     const sections = ['sobreMi', 'proyectos', 'contacto'];
+
     sections.forEach(id => {
         const section = document.getElementById(id);
         if (section) {
             if (id === sectionId) {
                 section.style.display = 'block';
+
+                // Añadimos la animación con un pequeño retraso
                 setTimeout(() => {
-                    section.classList.add('seccion-activa'); // Añadir animación con retardo
-                }, 50); // Pequeño retraso para que el navegador detecte el cambio
+                    section.classList.add('seccion-activa');
+                }, 50);
             } else {
                 section.style.display = 'none';
-                section.classList.remove('seccion-activa'); // Quitar animación
+                section.classList.remove('seccion-activa');
             }
         }
     });
 
-    // Si seleccionas "Sobre Mí", ejecuta la animación de los círculos
+    // Ejecutar animaciones específicas según la sección
     if (sectionId === 'sobreMi') {
-        animateCircles();
+        animateCircles(); // Animación de los círculos
     }
-    // Si seleccionas "Sobre Mí", ejecuta la animación de sección activa
-    if (sectionId === 'sobreMi') {
-        showSection(sectionId);
-    }
-};
+}
 
 
 // Ejecutar animación de los círculos
