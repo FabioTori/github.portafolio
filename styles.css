@@ -72,8 +72,8 @@ section {
 .circle::before {
     content: '';
     position: absolute;
-    width: 90px; /* Tamaño interior */
-    height: 90px;
+    width: 85px; /* Tamaño interior */
+    height: 85px;
     border-radius: 50%;
     background: #f4f1e0; /* Fondo interior del círculo */
 }
