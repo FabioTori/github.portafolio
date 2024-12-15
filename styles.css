@@ -292,10 +292,21 @@ section {
         height: 80px;
     }
 
-    .circle img {
-        width: 40px;
+    .circle {
+        width: 60px; /* Aún más pequeño en pantallas muy pequeñas */
+        height: 60px;
+    }
+
+    .circle::before {
+        width: 40px; /* Fondo interno más pequeño */
         height: 40px;
     }
+
+    .circle img {
+        width: 20px; /* Imagen más pequeña */
+        height: 20px;
+    }
+}
 
     .botones button {
         font-size: 1rem;
