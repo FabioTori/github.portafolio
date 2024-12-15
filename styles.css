@@ -239,8 +239,9 @@ h2 {
 
 
 /* Animación de subida */
+/* Clase que aplica la animación */
 .seccion-activa {
-    animation: slide-up 4s ease-out; /* Define la animación */
+    animation: slide-up 0.8s ease-out; /* Usa la animación durante 0.8s */
 }
 
 @keyframes slide-up {
@@ -254,7 +255,3 @@ h2 {
     }
 }
 
-/* Clase que aplica la animación */
-.seccion-activa {
-    animation: slide-up 0.8s ease-out; /* Usa la animación durante 0.8s */
-}

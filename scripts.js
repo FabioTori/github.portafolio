@@ -24,6 +24,10 @@ function showSection(sectionId) {
     if (sectionId === 'sobreMi') {
         animateCircles();
     }
+    // Si seleccionas "Sobre Mí", ejecuta la animación de sección activa
+    if (sectionId === 'sobreMi') {
+        showSection(sectionId);
+    }
 };
 
 
