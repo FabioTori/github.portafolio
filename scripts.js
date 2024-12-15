@@ -22,7 +22,7 @@ function showSection(sectionId) {
     if (sectionId === 'sobreMi') {
         animateCircles();
     }
-}
+};
 
 // Ejecutar animación de los círculos
 function animateCircles() {
