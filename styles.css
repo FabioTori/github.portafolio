@@ -136,16 +136,32 @@ section {
 }
 
 .imagenes-proyecto {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción original */
+    max-width: 600px; /* Tamaño máximo opcional */
+    display: block; /* Asegura que no haya espacios adicionales */
+    margin: auto; /* Centra la imagen */
 }
 
 .imagenes-proyecto img {
-    width: 100%;
-    max-height: 150px;
-    object-fit: cover;
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción original */
+    max-width: 600px; /* Tamaño máximo opcional */
+    display: block; /* Asegura que no haya espacios adicionales */
+    margin: auto; /* Centra la imagen */
+}
+
+/* Estilo base enlaces */
+.enlace-codigo {
+    color: #1a73e8; /* Color azul */
+    text-decoration: none; /* Sin subrayado por defecto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a "mano" al pasar el mouse */
+}
+
+.enlace-codigo:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+    color: #0d47a1; /* Un azul más oscuro */
 }
 
 /* --- ECUACIONES --- */
@@ -306,9 +322,9 @@ section {
         width: 20px; /* Imagen más pequeña */
         height: 20px;
     }
-}
-
     .botones button {
         font-size: 1rem;
     }
 }
+
+

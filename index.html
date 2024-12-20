@@ -69,42 +69,105 @@
             <!-- Proyecto 1 -->
             <div class="proyecto activo">
                 <h3>📊 Optimización del Cálculo de Desperdicio de Acero en Modelos BIM</h3>
+
+                <p>
+                    <strong>Código:</strong>
+                    <a href="https://nbviewer.org/github/FabioTori/DesperdicioAcero/blob/main/Desperdicio_Acero.ipynb" target="_blank" class="enlace-codigo">
+                        Desperdicio de Acero.ipynb
+                    </a>
+                </p>
+
+
                 <div class="contenedor-proyecto">
                     <div class="descripcion-proyecto">
                         <h4>Descripción del Problema</h4>
-                        <p>En la construcción, las varillas de acero corrugado son elementos longitudinales de sección circular y diámetros diversaos. Son utilizadas como elementos de refuerzo de elementos de concreto armado. Estas siguen criterios normativos que garantizan el correcto compartamiento estructural del elmento, lo cual deriva en varillas de longitudes y formas específicas (Ver Figura 1)</p>
-                        <p>En el sector construcción las varillas son vendidas por peso, comunmente expresado en toneladas y en longitudes de 9 metros. Esta última condición comercial genera el desperdicio de acero, pues si los criterios de diseño obligan a tener varillas de 6 metros, el desperdicio será el restante de 3 metros, pues esta longitud no podrá ser utilizada en otra varilla al ser menor que 6 metros.</p>
-                        <p>Lo mencionado se puede expresar bajo la siguiente expresión:</p>
+                        <p>En la construcción, las varillas de acero corrugado son elementos longitudinales de sección circular y diámetros diversos. Son utilizadas como elementos 
+                            de refuerzo de elementos de concreto armado. Estas siguen criterios normativos que garantizan el correcto compartamiento estructural del elmento, 
+                            lo cual deriva en varillas de longitudes y formas específicas, como se muestra en la Figura 1.</p>
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-acero1.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 1: Distribución de Acero en Columna</figcaption>
+                                </figure>   
+                            </div>
+                        <p>En el sector construcción las varillas son vendidas por peso, comunmente expresado en toneladas y en longitudes de 9 metros. Esta última condición comercial genera un cantidad desperdiciada al tener cortes de menor longitud. Lo mencionado es expresado bajo la siguiente ecuación:
                         
                         <div class="equation-container">
                             <script type="text/javascript" async
                                 src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
                             </script>
                             \[
-                            \text{Desperdicio} = \left( \frac{\text{Metrado de Pedido (Varillas Comerciales en Kg)}}{\text{Metrado Teórico (Según Diseño en Kg)}} - 1 \right) \times 100
+                            \text{Desperdicio} = \left( \frac{\text{Metrado de Pedido (Varillas Comerciales en Kg)}}{\text{Metrado Teórico (Varillas Según Diseño en Kg)}} - 1 \right) \times 100
                             \]
                         </div>
                         
-                        <p>Adicionalmente, una práctica estandarizada es contar una línea base para el Metrado Teórico, es decir unas condiciones de diseño iniciales, las cuales derivarán en un Metrado de Pedido en función de las longitudes dispuestas en plano. </p>
-                        <p>La línea base será llamada como el Metrado de Presupuesto y el Metrado de Pedido será el cálculo de longitudes de forma tal que se maximen las piezas obtenidas de una sola varilla comercial. Dentro de este último punto el único criterio de diseño que podrá iterarse será la Longitud de Traslape.</p>
-                        <p>El objetivo de este proyecto no es sustentar los criterios normativos para los Traslapes, por tantos estos no serán discutidos; sin embargo, estos son de acuerdo a la norma E060 del Reglamento Nacional de Edificaciones de Perú.</p>
+                        <p>Actualmente, el sector hace uso de dos forma de cuantificación para los Metrados Teóricos de Acero. Una se basa en un enfoque tradicional
+                            , en el cual se miden longitudes de plano de forma manual y se suman en base a criterios específicos para así, una vez convertidos a unidades de peso,
+                            obtener un Metrado Teórico o de plano. La otra toma un enfoque más innovador y hace uso de modelos digitales, conocidos como modelos de información (BIM),
+                            en los que el acero es modelado en un entorno digital en base a sus propiedades físicas y a su geometría. Si bien este último escenario facilita el cálculo
+                            de la cantidad de acero (Metrado) no brinda directamente un resultado del desperdicio pues no permite un cálculo rápido de la cantidad de cortes en una varilla
+                            comercial.
+
+                            Por otro lado, en la práctica, los cortes en las varillas de acero comerciales y el uso de piezas sobrantes para reducir el desperdicio, es comunmente resuelto
+                            por la mano de obra encargada del trabajo, es decir maestros de obra y capataces, teniendo en cuenta diversos criterios constructivos. Estos no son el objetivo 
+                            principal del proyecto y por tanto, no serán discutidos, mas si tomados en cuenta en el proceso.
+                        </p>
+                        <div class="imagenes-proyecto">
+                            <figure>
+                            <img src="proyecto-acero2.png" alt="Imagen del proyecto" title="doig">
+                            <figcaption>Figura 2: Modelo BIM Acero</figcaption>
+                            </figure>   
+                        </div>
+                        <p></p>
                         <h4>Objetivos</h4>
-                        <p>Se analizarán los siguientes elementos estructurales:</p>
+                        <p>Crear un flujo que permita calcular el desperdicio de acero a partir de un modelo de información BIM de una edificación de 3 pisos, 1 sótano y cimentación.
+                            Se analizan los siguientes elementos estructurales:</p>
                         <ul>
                             <li>Placas (Muros de Concreto Armado)</li>
                             <li>Columnas</li>
                             <li>Vigas</li>
                         </ul>
-                        <p>Se creará una función que permita realizar el agrupamiento de piezas.</p>
-                        <p>Se determinará el porcentaje de desperdicio por cada tipo (forma) del elemento y también de manera integral teniendo en consideración que las piezas de un elemento pueden ser utilizadas en otro.</p>
+                        <p>Para lograrlo se toma en cuenta:</p>
+                        <ul>
+                            <li>La data base será obtenida de un modelo BIM creado en Revit y exportada en formato CSV.</li>
+                            <li>El procesamiento de datos ser hará con python haciendo uso de la libería pandas.</li>
+                            <li>Se definirá una función de agrupamiento que permita unir las longitudes mayores con las longitudes menores, de forma tal que la suma sea la más cercana
+                                a los 9 metros comerciales.
+                            </li>
+                            </li>Se asumirá que los aceros podrán ser usados entre los tres elementos.</li>
+                        </ul>
                         <h4>Abordamiento del Problema</h4>
-                        <p>Ordenar elementos por partidas.</p>
+                        <p>Como punto inicial, es importante establecer la estructura de la data a exportar del modelo BIM. Esto se expresa como
+                            las columnas y el tipo de datos en cada una.
+                        <ul>
+                            <li>Elemento: Texto / Nombre del elemento, viga, columna, placa, otros.</li>
+                            <li>Tipo: Texto / Código del elemento, código de viga u otro.</li>
+                            <li>Diámetro: Texto / Tamaño de la varilla expresado en unidad de pulgadas fraccionarias. Se toma como texto.</li>
+                            <li>Longitud de barra (m): Número decimal / Longitud de las varillas según diseño o plano expresada en metros.</li>
+                            <li>Peso de acero (kg/m): Número decimal / Propiedad del acero, peso por unidad de longitud en función del diámetro.</li>
+                        </ul>
+                        </p>
+                        <p>De acuerdo al criterio de  desperdicio, el agrupamiento debe realizarse por cada Diámetro y en función de las Longitudes de Barra paran obtener la cantidad
+                            de Varillas Comerciales necesarias.
+                            El Elemento, así como el Tipo no serán considerados en el agrupamiento ya que el supuesto base es la utilización de piezas en cualquier elemento estructural.
+                        </p>
+
+                        <p>El Metrado Teórico será tomado a partir de un modelo BIM base, el cual corresponde a una versión sin modificaciones por criterios constructivos, esta será
+                            la línea base para el cálculo del desperdicio. Por otro lado, la cantidad de Varillas Comerciales será calculada a partir de un modelo BIM con modificaciones
+                            por criterios constructivos. Este enfoque permite asegurar que el desperdicio sea un indicador confiable al tomar un punto fijo como comparación.
+
+                        </p>
+
                         <h4>Resultados</h4>
-                        <p>Desperdicios por elemento y agrupamiento.</p>
-                    </div>
-                    <div class="imagenes-proyecto">
-                        <img src="proyecto-acero1.png" alt="Imagen del proyecto">
-                        <img src="proyecto-limpieza1.png" alt="Otra imagen del proyecto">
+                        <p>Del agrupamiento realizado, se obtienen desperdicios por diámetro para el proyecto analizado. Estos se expresan en unidades de venta, es decir, kilogramos.
+                            Así se obtiene lo expresado en la Figura 3.
+                        </p>
+                        <div class="imagenes-proyecto">
+                            <img src="proyecto-acero3.png" alt="Imagen del proyecto">
+                        </div>
+                        <p>Al crear un flujo de cálculo y contar con una línea base, es posible determinar el impacto en el desperdicio en base a las iteraciones por criterios constructivos
+                            a desarrollar así como a cambios en la ingeniería (Cambio en planos de acero).
+                        </p>
                     </div>
                 </div>
             </div>
