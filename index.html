@@ -57,41 +57,47 @@
     </section>
 
     <section id="proyectos" style="display: none;">
+
         <h2>PROYECTOS</h2>
         <!-- Flechas de navegación -->
         <div class="navegacion">
             <button onclick="cambiarProyecto('prev')" class="flecha"><</button>
             <button onclick="cambiarProyecto('next')" class="flecha">></button>
         </div>
-    
-        <!-- Contenedor de proyectos -->
+
         <div class="contenedor-proyectos">
             <!-- Proyecto 1 -->
             <div class="proyecto activo">
+                <div class="descripcion-proyecto">
                 <h3>📊 Optimización del Cálculo de Desperdicio de Acero en Modelos BIM</h3>
-
-                <p>
-                    <strong>Código:</strong>
-                    <a href="https://nbviewer.org/github/FabioTori/DesperdicioAcero/blob/main/Desperdicio_Acero.ipynb" target="_blank" class="enlace-codigo">
-                        Desperdicio de Acero.ipynb
-                    </a>
-                </p>
-
-
-                <div class="contenedor-proyecto">
+              
+                    <p><strong>Código:</strong>
+                        <a href="https://nbviewer.org/github/FabioTori/DesperdicioAcero/blob/main/Desperdicio_Acero.ipynb" target="_blank" class="enlace-codigo">
+                            Desperdicio de Acero.ipynb
+                        </a>
+                    </p>
+                </div>        
                     <div class="descripcion-proyecto">
                         <h4>Descripción del Problema</h4>
-                        <p>En la construcción, las varillas de acero corrugado son elementos longitudinales de sección circular y diámetros diversos. Son utilizadas como elementos 
-                            de refuerzo de elementos de concreto armado. Estas siguen criterios normativos que garantizan el correcto compartamiento estructural del elmento, 
-                            lo cual deriva en varillas de longitudes y formas específicas, como se muestra en la Figura 1.</p>
-                            <div class="imagenes-proyecto">
-                                <figure>
-                                <img src="proyecto-acero1.png" alt="Imagen del proyecto" title="doig">
-                                <figcaption>Figura 1: Distribución de Acero en Columna</figcaption>
-                                </figure>   
-                            </div>
-                        <p>En el sector construcción las varillas son vendidas por peso, comunmente expresado en toneladas y en longitudes de 9 metros. Esta última condición comercial genera un cantidad desperdiciada al tener cortes de menor longitud. Lo mencionado es expresado bajo la siguiente ecuación:
                         
+                        <p>
+                            En la construcción, las varillas de acero corrugado son elementos longitudinales de sección circular y diámetros diversos. Son utilizadas como elementos 
+                            de refuerzo de elementos de concreto armado. Estas siguen criterios normativos que garantizan el correcto compartamiento estructural del elmento, 
+                            lo cual deriva en varillas de longitudes y formas específicas, como se muestra en la Figura 1.
+                        </p>
+                        
+                        <div class="imagenes-proyecto">
+                            <figure>
+                            <img src="proyecto-acero1.png" alt="Imagen del proyecto" title="doig">
+                            <figcaption>Figura 1: Distribución de Acero en Columna</figcaption>
+                            </figure>   
+                        </div>
+                    
+                        <p>En el sector construcción las varillas son vendidas por peso, comunmente expresado en toneladas y en 
+                            longitudes de 9 metros. Esta última condición comercial genera un cantidad desperdiciada al tener cortes de menor longitud. 
+                            Lo mencionado es expresado bajo la siguiente ecuación:
+                        </p>
+                            
                         <div class="equation-container">
                             <script type="text/javascript" async
                                 src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
@@ -100,6 +106,7 @@
                             \text{Desperdicio} = \left( \frac{\text{Metrado de Pedido (Varillas Comerciales en Kg)}}{\text{Metrado Teórico (Varillas Según Diseño en Kg)}} - 1 \right) \times 100
                             \]
                         </div>
+                        
                         
                         <p>Actualmente, el sector hace uso de dos forma de cuantificación para los Metrados Teóricos de Acero. Una se basa en un enfoque tradicional
                             , en el cual se miden longitudes de plano de forma manual y se suman en base a criterios específicos para así, una vez convertidos a unidades de peso,
@@ -112,13 +119,15 @@
                             por la mano de obra encargada del trabajo, es decir maestros de obra y capataces, teniendo en cuenta diversos criterios constructivos. Estos no son el objetivo 
                             principal del proyecto y por tanto, no serán discutidos, mas si tomados en cuenta en el proceso.
                         </p>
+                        
+
                         <div class="imagenes-proyecto">
                             <figure>
                             <img src="proyecto-acero2.png" alt="Imagen del proyecto" title="doig">
                             <figcaption>Figura 2: Modelo BIM Acero</figcaption>
                             </figure>   
                         </div>
-                        <p></p>
+                                                    
                         <h4>Objetivos</h4>
                         <p>Crear un flujo que permita calcular el desperdicio de acero a partir de un modelo de información BIM de una edificación de 3 pisos, 1 sótano y cimentación.
                             Se analizan los siguientes elementos estructurales:</p>
@@ -155,9 +164,8 @@
                         <p>El Metrado Teórico será tomado a partir de un modelo BIM base, el cual corresponde a una versión sin modificaciones por criterios constructivos, esta será
                             la línea base para el cálculo del desperdicio. Por otro lado, la cantidad de Varillas Comerciales será calculada a partir de un modelo BIM con modificaciones
                             por criterios constructivos. Este enfoque permite asegurar que el desperdicio sea un indicador confiable al tomar un punto fijo como comparación.
-
                         </p>
-
+                
                         <h4>Resultados</h4>
                         <p>Del agrupamiento realizado, se obtienen desperdicios por diámetro para el proyecto analizado. Estos se expresan en unidades de venta, es decir, kilogramos.
                             Así se obtiene lo expresado en la Figura 3.
@@ -169,9 +177,11 @@
                             a desarrollar así como a cambios en la ingeniería (Cambio en planos de acero).
                         </p>
                     </div>
-                </div>
+                
             </div>
-    
+      
+
+          
             <!-- Proyecto 2 -->
             <div class="proyecto">
                 <h3>📅 Limpieza de Cronograma para Simulación</h3>
@@ -193,13 +203,15 @@
                 </div>
             </div>
         </div>
+
+
     </section>
     
 
     <section id="contacto" style="display: none;">
         <h2>CONTACTO</h2>
-        <p>Correo: xxxx@gmail.com</p>
-        <p>LinkedIn: <a href="https://llll.com" target="_blank">https://llll.com</a></p>
+        <p>Correo: lucianotori@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/luciano-tori-tori/" target="_blank">Fabio Luciano Tori tori</a></p>
     </section>
 
     <script src="scripts.js"></script>

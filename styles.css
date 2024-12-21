@@ -115,7 +115,8 @@ section {
 .contenedor-proyectos {
     position: relative;
     height: auto;
-}
+    
+  }
 
 .proyecto {
     position: absolute;
@@ -128,6 +129,7 @@ section {
 .proyecto.activo {
     display: block; /* Muestra solo el proyecto activo */
     opacity: 1;
+    pointer-events: auto;
 }
 
 .descripcion-proyecto {
@@ -153,16 +155,19 @@ section {
 
 /* Estilo base enlaces */
 .enlace-codigo {
-    color: #1a73e8; /* Color azul */
-    text-decoration: none; /* Sin subrayado por defecto */
-    font-weight: bold; /* Texto en negrita */
-    cursor: pointer; /* Cambia el cursor a "mano" al pasar el mouse */
+    color: #1a73e8; /* Azul estándar */
+    text-decoration: none; /* Quita el subrayado inicial */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Asegura que el cursor cambie a mano */
+    z-index: 1; /* Asegura que esté sobre otros elementos */
+    position: relative; /* Mantiene su posición en el flujo del documento */
 }
 
 .enlace-codigo:hover {
-    text-decoration: underline; /* Subrayado al pasar el cursor */
-    color: #0d47a1; /* Un azul más oscuro */
+    text-decoration: underline; /* Añade subrayado al pasar el cursor */
+    color: #0d47a1; /* Azul más oscuro */
 }
+
 
 /* --- ECUACIONES --- */
 .equation-container {
@@ -292,6 +297,10 @@ section {
         width: 90%; /* Los botones ocupan casi todo el ancho */
         margin: 10px auto; /* Centra los botones */
     }
+
+    .enlace-codigo {
+        font-size: 0.9rem; /* Tamaño del texto del enlace */
+    }
 }
 
 @media (max-width: 480px) {
@@ -328,3 +337,8 @@ section {
 }
 
 
+/* Regla global para permitir clics */
+* {
+    pointer-events: auto; /* Asegura que todos los elementos sean interactivos */
+    user-select: text;
+}
