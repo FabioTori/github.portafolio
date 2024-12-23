@@ -57,7 +57,7 @@ let proyectoActual = 0;
 
 function cambiarProyecto(direccion) {
     const proyectos = document.querySelectorAll('.proyecto');
-    proyectos[proyectoActual].classList.remove('.activo');
+    proyectos[proyectoActual].classList.remove('activo');
 
     if (direccion === 'next') {
         proyectoActual = (proyectoActual + 1) % proyectos.length; // Siguiente proyecto

@@ -128,8 +128,7 @@ section {
 
 .proyecto.activo {
     display: block; /* Muestra solo el proyecto activo */
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 1;   
 }
 
 .descripcion-proyecto {
