@@ -62,6 +62,7 @@
         <!-- Flechas de navegación -->
         <div class="navegacion">
             <button onclick="cambiarProyecto('prev')" class="flecha"><</button>
+            <span id="contador" class="contador">1/2</span>
             <button onclick="cambiarProyecto('next')" class="flecha">></button>
         </div>
 
@@ -170,7 +171,10 @@
                         Así se obtiene lo expresado en la Figura 3.
                     </p>
                     <div class="imagenes-proyecto">
-                        <img src="proyecto-acero3.png" alt="Imagen del proyecto">
+                        <figure>
+                        <img src="proyecto-avance1.png" alt="Imagen del proyecto" title="doig">
+                        <figcaption>Figura 1: Presentación Avance Físico de Obra</figcaption>
+                        </figure>   
                     </div>
                     <p>Al crear un flujo de cálculo y contar con una línea base, es posible determinar el impacto en el desperdicio en base a las iteraciones por criterios constructivos
                         a desarrollar así como a cambios en la ingeniería (Cambio en planos de acero).
@@ -183,22 +187,84 @@
           
             <!-- Proyecto 2 -->
             <div class="proyecto">
-                <h3>📅 Limpieza de Cronograma para Simulación</h3>
+                <h3>📅 Control Gráfico de Avance de Construcción con PowerBI y Speckle</h3>
                 <div class="contenedor-proyecto">
                     <div class="descripcion-proyecto">
                         <h4>Descripción del Problema</h4>
-                        <p>Errores en los datos del cronograma inicial.</p>
+                        <p>En el sector construcción es indispensable comunicar información entre distintos niveles jerárgicos de los involucrados
+                            de forma eficiente, es decir, comprensible por todos, y con el dinamismo que el propio sector demanda. Esto es aplicable para las
+                            diversas áreas que se desarrollen como parte de un proyecto de construcción. Una de estas áreas es la de planeamiento, concretamente
+                            en el avance de obra.
+                        </p>
+                        <p>El avance de obra tiene distintas dimensiones de control, como puede ser en términos económicos, actividades específicas, rescursos empleados
+                            o avance físico. En cualquier caso, el avance físico es importante puesto que da una orientación de qué se ha avanzado o culminado. Comumenmente
+                            las unidades físicas a utilizar pueden ser pisos, habitaciones, torres, columnas, techos, sectores u otros en función de la necesidad del proyecto.
+
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-avance2.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 1: Vista Exterior Obra de Edificación Alta</figcaption>
+                                </figure>   
+                            </div>
+
+                        </p>La claridad de la información suele superarse haciendo de uso de vistas de plano, o imágenes 2D acompañadas de viñetas que ilustran el avance
+                        físico de actividades específicas; sin embargo, este enfoque no logra acoplarse en su totalidad al dinamismo demandado por el sector, pues requiere
+                        un tiempo adicional de procesamiento y preparación, además de requrir ser enviado en múltiples ocasiones por algún medio acordado, como correo electrónico o 
+                        nube de almacenamiento. Esta última condición puede generar complicaciones al momento de acceder a la información actualizada, querer realizar una trazabilidad u obtener datos históricos. 
+                        <P>
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-avance1.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 2: Presentación Avance Físico de Obra</figcaption>
+                                </figure>   
+                            </div>
+
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-avance3.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 3: Presentación Avance Físico de Obra por Sectores</figcaption>
+                                </figure>   
+                            </div>
+
+                        </p>Actualmente existen herramientas de la metodología BIM que permiten generar visualizaciones más dinámicas y comprensibles para el avance físico de obra;
+                        sin embargo, estas suelen tener el problema de no ser de fácil acceso por todos los involucrados al requerir licencias especiales o cierto dominio de la herramienta
+                        digital.
+                        <p>
+
+                        </P>
                         <h4>Objetivos</h4>
-                        <p>Optimizar el cronograma de simulación para reducir inconsistencias...</p>
+                        <p>Vincular la información del modelo BIM de un proyecto, con la información de avance de obra en un reporte en línea haciendo uso de PowerBI y Speckle</p>
+                        
                         <h4>Abordamiento del Problema</h4>
-                        <p>Reorganización de las actividades y ajuste de tiempos.</p>
-                        <h4>Resultados</h4>
-                        <p>Cronogramas listos para simulación eficiente.</p>
+                        </p>Se tomará la información de 2 proyectos de edificación de 3 Niveles y un Sótano y 4 Niveles y 1 Sótano, a partir del cual, se trabajará el avance gráfico por niveles 
+                        y en función a la fecha fin.<p>
+
+                        </p>Para simplificar, los niveles se partirán en solo Verticales (Placas y columnas) y Horizontales (Vigas, losas y escaleras)
+                        <p>     
+                         <h4>Resultados</h4>
+                        <p>El resultado se muestra en el reporte de PowerBI. Se tiene una interfaz de fácil uso donde se puede ver por cada semana de obra (relativa al inicio
+                            del proyecto) el avance gráfico programado y el avance gráfico realmente ejecutado.</p>
+
+                        <div class="iframe-container">
+                            <iframe title="Avance Gráfico" width="600" height="373.5" 
+                                src="https://app.powerbi.com/view?r=eyJrIjoiYWM4YjFiZDktNjU3YS00MTlhLWExODAtYzRhZTBkYzA3MDYxIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" 
+                                frameborder="1" allowFullScreen="true">
+                            </iframe>
+                        </div>
+
+                        <p>Del mismo modo, para el proyecto de 4 Niveles, es posible incluir porcentajes de avance y una partición a mayor detalle, la cual corresponde a 
+                            los sectores (unidades de producción de acuerdo a metodología Lean Construction) que son la partición de un nivel. Este método es usado comunmente
+                            en construcción al minimizar desperidicios y tener una producción continua; sin embargo, no es objeto de discusión para el presente proyecto.</p>
+
+                            <div class="iframe-container">
+                                <iframe title="Avance Gráfico 2" width="600" height="373.5" 
+                                src="https://app.powerbi.com/view?r=eyJrIjoiMjE3MDY2MjItNjhkZC00MDIwLTg2MGItNjlmZWNkZDViZjcxIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" 
+                                frameborder="0" allowFullScreen="true"></iframe>
+                            </div>
+    
+                        <p>Mediante estos simples modelos de reporte se logra agilizar la transferencia de información, mejorar el entedimiento de todos los involucrados y tener un indicador confiable.</p>
                     </div>
-                    <div class="imagenes-proyecto">
-                        <img src="proyecto2a.jpg" alt="Imagen del proyecto">
-                        <img src="proyecto2b.jpg" alt="Otra imagen del proyecto">
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -54,16 +54,23 @@ function animateCircles() {
 
 
 let proyectoActual = 0;
+const totalProyectos = document.querySelectorAll('.proyecto').length;
 
 function cambiarProyecto(direccion) {
     const proyectos = document.querySelectorAll('.proyecto');
     proyectos[proyectoActual].classList.remove('activo');
 
     if (direccion === 'next') {
-        proyectoActual = (proyectoActual + 1) % proyectos.length; // Siguiente proyecto
+        proyectoActual = (proyectoActual + 1) % totalProyectos;
     } else if (direccion === 'prev') {
-        proyectoActual = (proyectoActual - 1 + proyectos.length) % proyectos.length; // Proyecto anterior
+        proyectoActual = (proyectoActual - 1 + totalProyectos) % totalProyectos;
     }
 
     proyectos[proyectoActual].classList.add('activo');
+    // Actualiza el contador
+    const contador = document.getElementById('contador');
+    contador.textContent = `${proyectoActual + 1}/${totalProyectos}`;
 }
+
+
+

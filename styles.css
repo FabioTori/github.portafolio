@@ -93,6 +93,18 @@ section {
     gap: 4rem; 
     margin: 1rem 0; 
 }
+
+.contador {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    border: 1px solid #ddd; /* Opcional: bordes */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo opcional */
+} 
+
 .flecha {
     background: #333;
     color: #fff;
@@ -151,6 +163,19 @@ section {
     display: block; /* Asegura que no haya espacios adicionales */
     margin: auto; /* Centra la imagen */
 }
+
+.iframe-container {
+    display: flex; /* Usa flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente (opcional) */
+    margin: 2rem 0; /* Espaciado superior e inferior */
+}
+
+iframe {
+    border: 1px solid #ccc; /* Bordes opcionales */
+    border-radius: 5px; /* Esquinas redondeadas opcionales */
+}
+
 
 /* Estilo base enlaces */
 .enlace-codigo {
