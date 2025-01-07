@@ -62,7 +62,7 @@
         <!-- Flechas de navegación -->
         <div class="navegacion">
             <button onclick="cambiarProyecto('prev')" class="flecha"><</button>
-            <span id="contador" class="contador">1/2</span>
+            <span id="contador" class="contador">1/3</span>
             <button onclick="cambiarProyecto('next')" class="flecha">></button>
         </div>
 
@@ -267,8 +267,110 @@
 
                 </div>
             </div>
-        </div>
+       
 
+            <!-- Proyecto 3 -->
+            <div class="proyecto">
+                <h3>🍷 Clasificación de Clientes de Vino con Algoritmo de K-medias</h3>
+
+                <p><strong>Código:</strong>
+                    <a href="https://nbviewer.org/github/FabioTori/K-means-Wine/blob/main/k_means_wine.ipynb" target="_blank" class="enlace-codigo">
+                    K-means Wine.ipynb
+                    </a>
+                </p>
+
+                <div class="contenedor-proyecto">
+                    <div class="descripcion-proyecto">
+                        <h4>Descripción del Problema</h4>
+                        <p>Se tiene una data de ventas en formato csv, la cual incluye todas las transacciones de compra de vino realizadas en un tiempo determinado. Las transacciones
+                            incluyen las siguientes variables:
+                        </p>
+                        <ul>
+                            <li>apellido: Apellido del comprador.</li>
+                            <li>promción: Código de promoción adquirido</li>
+                            <li>campañar: Mes de la promoción adquirida.</li>
+                            <li>variedad: Variedad del vino de la promoción adquirida</li>
+                            <li>cantidad_min: Unidades mínimas de la promoción adquirida.</li>
+                            <li>descuento: Descuento porcentual de la promoción adquirida.</li>
+                            <li>origen: Procedencia del vino de la promoción adquirida.</li>
+                        </ul>
+                        <p>Se desea clasificar a los clientes en base a sus compras y preferencias de vinos
+                        </p>
+
+                        </P>
+                        <h4>Objetivos</h4>
+                        <p>Clasificar clientes de vino por grupos y analizar las características de cada grupo</p>
+                        
+                        <h4>Abordamiento del Problema</h4>
+                        </p>Se hará uso del agloritmo de clasificación de k-medias, el cual parte de conjuntos agrupados con el criterio de la distancia euclediana al
+                        centroido de cada grupo.<p>
+
+                        </p>Al tener variables categóricas, se codificarán en función del apellido, siendo que, cada uno de estos será un registro y las promociones serán las variables
+                        o dimensiones a tomar en cuenta en la clasificación. Así, se tendrá que, para cada apellido existirán distintas promociones adquiridas, como se muestra en la Figura 1.
+                        <p>
+                            
+                        <div class="imagenes-proyecto">
+                            <figure>
+                            <img src="proyecto-cluster1.png" alt="Imagen del proyecto" title="doig">
+                            <figcaption>Figura 1: Data de Ventas Procesada</figcaption>
+                            </figure>   
+                        </div>
+
+                        <h4>Resultados</h4>
+                        <p>De la clasificación, es posible analizar cada dimensión propia de cada promoción, así, se tienen:.</p>
+                        <ul>
+                            <li>origen: Se analiza el continente de procedencia preferido.</li>
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-cluster2.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 2: Ventas por Continente</figcaption>
+                                </figure>   
+                            </div>
+                            <li>variedad: Se analiza la variedad y el tipo de vino (Tinto, Blanco) preferido.</li>
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-cluster3.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 3: Ventas por Tipo de Vino</figcaption>
+                                </figure>   
+                            </div>
+
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-cluster4.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 4: Ventas por Variedad de Vino</figcaption>
+                                </figure>   
+                            </div>
+                            <li>campaña: Se analiza los meses preferidos de compras así como la constancia.</li>
+
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-cluster5.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 4: Ventas por Trimestre</figcaption>
+                                </figure>   
+                            </div>
+
+                            <div class="imagenes-proyecto">
+                                <figure>
+                                <img src="proyecto-cluster6.png" alt="Imagen del proyecto" title="doig">
+                                <figcaption>Figura 4: Ventas por Mes</figcaption>
+                                </figure>   
+                            </div>
+                        </ul>
+
+                        <p>De los resultados para cada dimensión, se puede concluir para cada grupo de clientes:.</p>
+                        <ul>
+                            <li>El grupo 0 tiene preferencia por los vinos blancos de procedencia Europea, concretamente, el Champagne. 
+                                Además, sus pedidos son constantes, pero menos frecuentes en julio, septiembre y noviembre.</li>
+                            <li>El grupo 1 tiene preferencia por vinos Europeos; sin embargo, tiene igual afinidad por tinos como secos, siendo los más buscados el Espumante en secos y, Prosecco, Malbec y Pinot Noir en tintos. 
+                                Sus pedidos son mayores en marzo, y contantes en julio, noviembre y diciembre; sin embargo, bajos o nulos en los otros meses.</li>
+                            <li>El grupo 2 tiene preferencia por vinos tintos de procedencia europea, consumen casi en su totalidad Pinot Noir. 
+                                Sus compras son mayores en el último trimestre del año, concretamente en setiembre y octubre.</li>
+                        <ul>
+
+                    </div>            
+                </div>
+            </div>
+        </div>
 
     </section>
     
