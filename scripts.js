@@ -57,20 +57,24 @@ let proyectoActual = 0;
 const totalProyectos = document.querySelectorAll('.proyecto').length;
 
 function cambiarProyecto(direccion) {
-    const proyectos = document.querySelectorAll('.proyecto');
-    proyectos[proyectoActual].classList.remove('activo');
+  const proyectos = document.querySelectorAll('.proyecto');
+  // Oculta el actual
+  proyectos[proyectoActual].classList.remove('activo');
+  proyectos[proyectoActual].style.display = 'none';
 
-    if (direccion === 'next') {
-        proyectoActual = (proyectoActual + 1) % totalProyectos;
-    } else if (direccion === 'prev') {
-        proyectoActual = (proyectoActual - 1 + totalProyectos) % totalProyectos;
-    }
+  if (direccion === 'next') {
+    proyectoActual = (proyectoActual + 1) % totalProyectos;
+  } else if (direccion === 'prev') {
+    proyectoActual = (proyectoActual - 1 + totalProyectos) % totalProyectos;
+  }
 
-    proyectos[proyectoActual].classList.add('activo');
-    // Actualiza el contador
-    const contador = document.getElementById('contador');
-    contador.textContent = `${proyectoActual + 1}/${totalProyectos}`;
+  // Muestra el nuevo
+  proyectos[proyectoActual].style.display = 'block';
+  proyectos[proyectoActual].classList.add('activo');
+
+  // Actualiza el contador
+  const contador = document.getElementById('contador');
+  contador.textContent = `${proyectoActual + 1}/${totalProyectos}`;
 }
-
 
 

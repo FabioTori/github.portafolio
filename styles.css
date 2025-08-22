@@ -131,16 +131,18 @@ section {
   }
 
 .proyecto {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    opacity: 0;
-    transition: all 0.4s ease-in-out; /* Transición suave */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  display: none;           /*  Oculto de verdad */
+  pointer-events: none;    /* No intercepta clics */
 }
 
 .proyecto.activo {
-    display: block; /* Muestra solo el proyecto activo */
-    opacity: 1;   
+  display: block;          /* Solo el activo es visible */
+  opacity: 1;
+  pointer-events: auto;    /* Solo el activo recibe clics */
 }
 
 .descripcion-proyecto {
